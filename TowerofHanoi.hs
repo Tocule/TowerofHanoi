@@ -1,6 +1,5 @@
 data Tower = First|Middle|Last deriving (Show,Eq)
 
-
 f :: Tower
 m :: Tower
 l :: Tower
@@ -22,7 +21,7 @@ myHanoi n f m l =
 		let 
 		    step1 = myHanoi (n-1) f l m 
 	            step2 = (n,(f,l))
-	            step3 = myHanoi (n-1) l m f
+	            step3 = myHanoi (n-1) m f l
     		 in step1 ++ [step2] ++ step3
     
 
